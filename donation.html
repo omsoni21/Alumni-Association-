@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alumni Association - Donate</title>
+  <link rel="stylesheet" href="donation.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="Alumni_home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="admin_dashboard.html">Transition View</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Donation Container -->
+  <div class="donation-container">
+    <div class="donation-form">
+      <h2>Support Our Alumni Association</h2>
+      <p>Your donation will help us continue our mission and support alumni activities.</p>
+      
+      <form id="donation-form" action="thankyou.html" method="post">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="amount">Donation Amount</label>
+          <input type="number" id="amount" name="amount" min="1" required>
+        </div>
+
+        <div class="form-group">
+          <label for="payment-method">Payment Method</label>
+          <select id="payment-method" name="payment-method" required>
+            <option value="credit-card">Credit Card</option>
+            <option value="paypal">PayPal</option>
+            <option value="bank-transfer">Bank Transfer</option>
+          </select>
+        </div>
+
+        <div id="credit-card-info" class="payment-details">
+          <div class="form-group">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" name="card-number" required>
+          </div>
+
+          <div class="form-group">
+            <label for="expiry-date">Expiry Date</label>
+            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+          </div>
+
+          <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" required>
+          </div>
+        </div>
+
+        <div id="paypal-info" class="payment-details">
+          <p>You will be redirected to PayPal to complete your donation.</p>
+        </div>
+
+        <button type="submit">Donate Now</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Alumina Association. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Handle form submission
+    document.getElementById('donation-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Get form data
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const amount = document.getElementById('amount').value;
+      const paymentMethod = document.getElementById('payment-method').value;
+
+      // Create a donation log object
+      const donationLog = {
+        name: name,
+        email: email,
+        amount: amount,
+        paymentMethod: paymentMethod
+      };
+
+      // Save to localStorage (or send to a server)
+      let donationLogs = JSON.parse(localStorage.getItem('donationLogs')) || [];
+      donationLogs.push(donationLog);
+      localStorage.setItem('donationLogs', JSON.stringify(donationLogs));
+
+      // Redirect to thank you page
+      window.location.href = 'thankyou.html';
+    });
+
+    // Show/hide payment details based on selected method
+    document.getElementById('payment-method').addEventListener('change', function () {
+      const method = this.value;
+      document.querySelectorAll('.payment-details').forEach(function (el) {
+        el.style.display = 'none';
+      });
+      if (method === 'credit-card') {
+        document.getElementById('credit-card-info').style.display = 'block';
+      } else if (method === 'paypal') {
+        document.getElementById('paypal-info').style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

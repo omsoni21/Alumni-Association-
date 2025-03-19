@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Signup</title>
+  <link rel="stylesheet" href="admin.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="Alumni_home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="donation.html">Donation</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Signup Container -->
+  <div class="signup-container">
+    <h2>Admin Signup</h2>
+    <form id="signup-form">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit">Sign Up</button>
+      <p>Already have an account? <a href="admin_logi.html">Login</a></p>
+    </form>
+  </div>
+
+  <script>
+    // Handle signup form submission
+    document.getElementById('signup-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Save credentials to localStorage
+      localStorage.setItem('adminUsername', username);
+      localStorage.setItem('adminPassword', password);
+      alert('Signup successful! Please log in.');
+      window.location.href = 'admin_logi.html';
+    });
+  </script>
+</body>
+</html>

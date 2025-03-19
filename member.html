@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="member.css">
+  <title>Alumina Association - Members</title>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="Alumni_home.html">Home</a></li>
+        <li><a href="members-details.html"> manage Members</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Alumina Association Members</h1>
+
+    <!-- Search Section -->
+    <section id="search-section">
+      <input type="text" id="search-input" placeholder="Search members..." onkeyup="searchMembers()">
+    </section>
+
+    <!-- Members List -->
+    <section id="members-section">
+      <ul id="members-list">
+        <!-- Members will be dynamically added here -->
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Alumina Association</p>
+  </footer>
+
+  <script src="member.js"></script>
+</body>
+</html>

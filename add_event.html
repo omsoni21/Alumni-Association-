@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="add_event.css">
+  <link rel="icon" href="logo.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <title>Add Event - Alumni Association Events</title>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header>
+    <div>
+      
+      <h1> Alumni Association - Events</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="event.html">Home</a></li>
+        
+        <li><a href="add_event.html">Add Event</a></li>
+        <li><a href="disp_event.html">Display Events</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!--Add event box -->
+  <main>
+    <div class="container add">
+      <h2>Add Event</h2>
+      <form id="add_event" > 
+        <div class="ele">
+          <label for="event_name">Event Name</label>
+          <input type="text" id="event_name" name="event_name" required>
+        </div>
+        <div class="ele">
+          <label for="event_date">Date</label>
+          <input type="date" id="event_date" name="event_date" required>
+        </div>
+        <div class="ele">
+          <label for="event_time">Time</label>
+          <input type="time" id="event_time" name="event_time" required>
+        </div>
+		<div class="ele">
+          <label for="event_time">location</label>
+          <input type="location" id="event_location" name="event_location" required>
+        </div>
+        <div class="ele">
+          <label for="event_description">Event Description</label><br>
+          <textarea id="event_description" name="event_description" rows="8" cols="80" required></textarea>
+        </div>
+        <div class="ele">
+          <button type="submit" value="submit">Submit</button>
+          <button type="reset" value="clear">Clear</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    const editEvent = JSON.parse(localStorage.getItem('editEvent'));
+    if(editEvent) {
+      document.getElementById('event_name').value = editEvent.event_name;
+      document.getElementById('event_date').value = editEvent.event_date;
+      document.getElementById('event_time').value = editEvent.event_time;
+	  document.getElementById('event_location').value = editEvent.event_location;
+      document.getElementById('event_description').value = editEvent.event_description;
+    }
+
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', (e)=> {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      const obj = Object.fromEntries(formData);
+      console.log(obj);
+
+      localStorage.removeItem('editEvent');
+
+      let events = JSON.parse(localStorage.getItem('events')) || [];
+      events.push(obj);
+      localStorage.setItem('events', JSON.stringify(events));
+
+      window.location.href = 'disp_event.html';
+    })
+  </script>
+</body>
+</html>

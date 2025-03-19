@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="member.css">
+  <title>Alumina Association - Member Details</title>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="Alumni_home.html">Home</a></li>
+        <li><a href="member.html">View All Members</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Alumina Association Member Details</h1>
+
+    <!-- Admin Section -->
+    <section id="admin-section">
+      <h2>Admin Actions</h2>
+      <div class="admin-actions">
+        <!-- Add Member Form -->
+        <div class="add-member">
+          <h3>Add Member</h3>
+          <input type="text" id="add-member-name" placeholder="Enter member name">
+          <input type="text" id="add-member-position" placeholder="Enter member position">
+          <button onclick="addMember()">Add</button>
+        </div>
+
+        <!-- Remove Member Form -->
+        <div class="remove-member">
+          <h3>Remove Member</h3>
+          <input type="text" id="remove-member-name" placeholder="Enter member name">
+          <button onclick="removeMember()">Remove</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Members List -->
+    <section id="members-section">
+      <ul id="members-list">
+        <!-- Members will be dynamically added here -->
+      </ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Alumina Association</p>
+  </footer>
+
+  <script src="member.js"></script>
+</body>
+</html>

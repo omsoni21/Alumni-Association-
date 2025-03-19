@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistec GN Alumni Portal</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Sistec GN Alumni Logo">
+                <h1>Sistec GN Alumni Association</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="Alumni_home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="event.html">Events</a></li>
+                <li><a href="galery.html">Gallery</a></li>
+                <li><a href="member.html">Members</a></li>
+                <li><a href="donation.html">Donations</a></li>
+                <li><a href="apply_job.html">Job</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li id="login-logout">
+                    <a href="#" id="logout">Logout</a>
+                    
+                </li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Sistec GN Alumni Portal</h1>
+            <p>Connecting the past, present, and future of Sistec GN alumni.</p>
+            <a href="#showcase" class="btn">Explore More</a>
+        </div>
+    </section>
+
+    <!-- Showcase Section -->
+    <section id="showcase" class="showcase-grid">
+        <div class="grid-item">
+            <img src="meet.jpg" alt="Annual Alumni Meet">
+            <div class="overlay">
+                <a href="meet.html">
+                    <h2>Annual Alumni Meet</h2>
+                </a>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img src="achiv.jpg" alt="Alumni Achievements">
+            <div class="overlay">
+                <a href="achiv.html">
+                    <h2>Alumni Achievements</h2>
+                </a>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img src="webinar.jpg" alt="Webinar on Career Growth">
+            <div class="overlay">
+                <a href="webinar.html">
+                    <h2>Webinar on Career Growth</h2>
+                </a>
+            </div>
+        </div>
+        <div class="grid-item">
+            <img src="Spotlight.jpg" alt="Alumni Spotlight">
+            <div class="overlay">
+                <a href="alumni-spotlight.html">
+                    <h2>Alumni Spotlight</h2>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About Sistec GN Alumni Association</h2>
+        <p>The Sistec GN Alumni Association is dedicated to fostering lifelong connections among alumni, students, and the institution. We aim to celebrate achievements, provide career support, and organize events to strengthen our community.</p>
+    </section>
+
+    <!-- Image Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <h2>Some Memories </h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="gallery1.jpg" alt="Gallery Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery2.jpg" alt="Gallery Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery3.jpg" alt="Gallery Image 3">
+            </div>
+            <div class="gallery-item">
+                <img src="gallery4.jpg" alt="Gallery Image 4">
+            </div>
+        </div>
+        <div class="gallery-description">
+            <p>Sagar Group of Institutions-SISTec successfully hosted an Alumni Meet - "Confluentia 2024", a heartwarming reunion of alumni from engineering, pharmacy, and management streams. The event was a grand celebration of the enduring bond between the institution and its alumni, bringing together graduates from various batches to reconnect, reminisce, and celebrate their shared journey.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <h2>What Our Alumni Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-item">
+                <p>"Sistec GN gave me the foundation to build my career. The alumni network has been incredibly supportive."</p>
+                <h3>- John Doe, Batch of 2015</h3>
+            </div>
+            <div class="testimonial-item">
+                <p>"The alumni meet was a great opportunity to reconnect with old friends and mentors."</p>
+                <h3>- Jane Smith, Batch of 2018</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map-section">
+        <h2>Our College Location</h2>
+        <div id="map"></div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="Alumni_home.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="event.html">Events</a></li>
+                    <li><a href="galery.html">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/sagargroupofinstitutionssistec"><i class="fab fa-facebook"></i></a>
+                    <a href="https://x.com/sagarcollege"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/channel/UCytOCmxQb7IFU2BVFdI7T7w"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/school/sagar-group-of-institutions-sistec/"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/sagarcollegebhopal?igsh=MXJ3dHI3Mml1NWFsaA=="><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: alumni@sistecgn.ac.in</p>
+                <p>Phone: +91 12345 67890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sistec GN Alumni Association. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Map, Login, and Animations -->
+    <script>
+           // Check if user is logged in
+        document.addEventListener("DOMContentLoaded", function () {
+            const loggedInUser = localStorage.getItem('loggedInUser');
+            if (!loggedInUser) {
+                window.location.href = 'login.html'; // Redirect to login if not logged in
+            }
+        });
+
+        // Logout functionality
+        document.getElementById('logout').addEventListener('click', function (e) {
+            e.preventDefault();
+            localStorage.removeItem('loggedInUser'); // Clear logged-in user
+            window.location.href = 'login.html'; // Redirect to login page
+        });
+
+        // Google Maps API to display college location
+        function initMap() {
+            // Coordinates for the college location
+            const collegeLocation = { lat: 23.303825, lng: 77.339873 }; // Example: College location
+
+            // Initialize the map
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: collegeLocation,
+                mapTypeId: 'terrain', // You can change this to 'satellite', 'hybrid', etc.
+                styles: [
+                    {
+                        featureType: "poi",
+                        elementType: "labels",
+                        stylers: [{ visibility: "off" }] // Hide points of interest labels
+                    }
+                ]
+            });
+
+            // Add a marker for the college location
+            new google.maps.Marker({
+                position: collegeLocation,
+                map: map,
+                title: "Our College Location",
+                icon: "https://maps.google.com/mapfiles/kml/paddle/blu-circle.png", // Custom icon for college
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVLRPYo9nmjaLpSnxcFHf1IrOriAZrXFk&callback=initMap"></script>
+</body>
+</html>

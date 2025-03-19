@@ -1,0 +1,189 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #003366; /* Dark blue */
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Add spacing between nav items */
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffd700; /* Gold color for hover effect */
+}
+
+/* Main Content */
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  color: #003366; /* Dark blue */
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+h2, h3 {
+  color: #003366; /* Dark blue */
+  margin-bottom: 20px;
+}
+
+/* Search Section */
+#search-section {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#search-input {
+  width: 60%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #003366;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#search-input:focus {
+  border-color: #ffd700; /* Gold color on focus */
+}
+
+/* Members List */
+#members-list {
+  list-style: none;
+  padding: 0;
+}
+
+#members-list li {
+  background-color: #fff;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 18px; /* Increase font size for better readability */
+}
+
+#members-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for member name and position */
+.member-name {
+  font-weight: 600; /* Bold for names */
+  color: #003366; /* Dark blue */
+  margin-right: 10px; /* Add spacing between name and position */
+}
+
+.member-position {
+  color: #555; /* Gray for positions */
+  font-weight: 400; /* Normal weight for positions */
+}
+
+/* Admin Section */
+#admin-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.add-member, .remove-member {
+  flex: 1;
+  min-width: 250px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-member h3, .remove-member h3 {
+  margin-top: 0;
+  color: #003366;
+  font-size: 1.5rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #003366;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #002244; /* Darker blue on hover */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #003366;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Upload Event Photos</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f8ff; /* Light cyan background */
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Navigation Bar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #4a90e2; /* Vibrant blue */
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 20px;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700; /* Gold on hover */
+    }
+
+    /* Main Container */
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 500px;
+      width: 100%;
+      margin-top: 100px; /* Adjusted to avoid overlap with navbar */
+      text-align: center;
+    }
+
+    h2 {
+      color: #4a90e2; /* Vibrant blue */
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    /* Upload Box */
+    .upload-box {
+      border: 2px dashed #4a90e2; /* Vibrant blue */
+      border-radius: 10px;
+      padding: 20px;
+      background: #f9f9f9;
+      cursor: pointer;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .upload-box:hover {
+      background: #e8f5e9; /* Light green */
+      border-color: #2E8B57; /* Green */
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    /* Styled Upload Button */
+    .upload-btn {
+      background-color: #4a90e2; /* Vibrant blue */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+      margin-top: 15px;
+    }
+
+    .upload-btn:hover {
+      background-color: #2E8B57; /* Green */
+      transform: scale(1.05);
+    }
+
+    /* Success Message */
+    #success-message {
+      display: none;
+      margin-top: 15px;
+      color: #4a90e2; /* Vibrant blue */
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    /* Animation for success message */
+    .show-message {
+      display: block !important;
+      opacity: 1 !important;
+    }
+
+    /* Footer Section */
+    footer {
+      background: #4a90e2; /* Vibrant blue */
+      color: white;
+      text-align: center;
+      padding: 20px;
+      width: 100%;
+      margin-top: auto;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+        margin-top: 80px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .upload-box {
+        padding: 15px;
+      }
+
+      .upload-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="Alumni_home.html">Home</a></li>
+      <li><a href="galery.html">Event Photos</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2>Upload Event Photos</h2>
+
+    <!-- Drag & Drop Upload Box -->
+    <label for="photo-upload" class="upload-box">
+      Click or Drag to Upload Photos
+      <input type="file" id="photo-upload" accept="image/*" multiple>
+    </label>
+
+    <button class="upload-btn" onclick="uploadPhotos()">Upload</button>
+
+    <!-- Success message -->
+    <p id="success-message">✅ Photos uploaded successfully!</p>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Alumni Association. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function uploadPhotos() {
+      const fileInput = document.getElementById('photo-upload');
+      const files = fileInput.files;
+
+      if (files.length > 0) {
+        const uploadedPhotos = JSON.parse(localStorage.getItem('uploadedPhotos')) || [];
+        const readers = [];
+
+        for (let i = 0; i < files.length; i++) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            uploadedPhotos.push(e.target.result);
+
+            // Save all photos to localStorage
+            if (i === files.length - 1) {
+              localStorage.setItem('uploadedPhotos', JSON.stringify(uploadedPhotos));
+
+              // Show success message with animation
+              const successMessage = document.getElementById('success-message');
+              successMessage.classList.add("show-message");
+
+              // Clear input field
+              fileInput.value = "";
+
+              // Hide success message after 3 seconds
+              setTimeout(() => {
+                successMessage.classList.remove("show-message");
+              }, 3000);
+            }
+          };
+          reader.readAsDataURL(files[i]);
+          readers.push(reader);
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

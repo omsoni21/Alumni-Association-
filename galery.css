@@ -1,0 +1,317 @@
+ /* General Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f0f8ff; /* Light cyan background */
+      color: #333;
+    }
+
+    /* Navigation Bar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #4a90e2; /* Vibrant blue */
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      padding-left: 20px;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700; /* Gold on hover */
+    }
+
+    /* Page Content */
+    .container {
+      margin-top: 100px;
+      padding: 20px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      color: #4a90e2; /* Vibrant blue */
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    /* Photo Gallery */
+    #photo-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+
+    .photo-container {
+      position: relative;
+      display: inline-block;
+      border: 4px solid white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+      overflow: hidden;
+    }
+
+    .photo-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .photo-container.selected {
+      border: 4px solid #ff4d4d; /* Red border for selected photos */
+    }
+
+    #photo-gallery img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    #photo-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Action Buttons */
+    .action-buttons {
+      margin-top: 20px;
+      display: none;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .btn {
+      background: #4a90e2; /* Vibrant blue */
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+      background: #2E8B57; /* Green on hover */
+      transform: scale(1.05);
+    }
+
+    .btn.delete {
+      background: #ff4d4d; /* Red for delete button */
+    }
+
+    .btn.delete:hover {
+      background: #cc0000; /* Darker red on hover */
+    }
+
+    .btn.cancel {
+      background: #999; /* Gray for cancel button */
+    }
+
+    .btn.cancel:hover {
+      background: #666; /* Darker gray on hover */
+    }
+
+    /* Lightbox Popup */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1001;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .lightbox img:hover {
+      transform: scale(1.03);
+    }
+
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      background: #ff4d4d; /* Red close button */
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .lightbox .close:hover {
+      background: #cc0000; /* Darker red on hover */
+    }
+
+    /* Footer Section */
+    footer {
+      background: #4a90e2; /* Vibrant blue */
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-section {
+      flex: 1;
+      margin: 0 1rem;
+      min-width: 200px;
+    }
+
+    .footer-section h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: #ffd700; /* Gold */
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .footer-section ul li a:hover {
+      color: #ffd700; /* Gold on hover */
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .social-links a {
+      color: #fff;
+      font-size: 1.5rem;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #ffd700; /* Gold on hover */
+      transform: scale(1.1);
+    }
+
+    .footer-section p {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+
+    .footer-bottom {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav ul {
+        justify-content: center;
+        padding-left: 0;
+      }
+
+      nav ul li {
+        margin-right: 15px;
+      }
+
+      .container {
+        padding: 15px;
+      }
+
+      #photo-gallery img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+
+      .lightbox .close {
+        top: 10px;
+        right: 20px;
+        font-size: 24px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-section {
+        margin: 1rem 0;
+      }
+
+      .social-links {
+        gap: 1.5rem;
+      }
+    }

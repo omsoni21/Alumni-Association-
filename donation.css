@@ -1,0 +1,153 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #003366; /* Dark blue, similar to IIT Bombay's theme */
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Add spacing between nav items */
+}
+
+nav ul li {
+  margin: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffd700; /* Gold color for hover effect */
+}
+
+/* Donation Container */
+.donation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 40px;
+}
+
+.donation-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.donation-form h2 {
+  color: #003366; /* Dark blue */
+  font-size: 2rem;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.donation-form p {
+  color: #555;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 0px;
+}
+
+.donation-form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0px;
+  color: #003366; /* Dark blue */
+}
+
+.donation-form input[type="text"],
+.donation-form input[type="email"],
+.donation-form input[type="number"],
+.donation-form select {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.donation-form input[type="text"]:focus,
+.donation-form input[type="email"]:focus,
+.donation-form input[type="number"]:focus,
+.donation-form select:focus {
+  border-color: #003366; /* Dark blue on focus */
+}
+
+/* Payment Details */
+.payment-details {
+  display: none;
+  margin-bottom: 20px;
+}
+
+#credit-card-info {
+  display: block; /* Show credit card details by default */
+}
+
+#paypal-info p {
+  color: #555;
+  font-size: 10px;
+  text-align: center;
+}
+
+/* Button Styles */
+.donation-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #003366; /* Dark blue */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.donation-form button:hover {
+  background-color: #002244; /* Darker blue on hover */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 0px;
+  background-color: #003366;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
